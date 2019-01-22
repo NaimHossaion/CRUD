@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
-    <style type="text/css">
+	
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+	<script src="js/popper.js" type="text/javascript"></script>
+    <script src="js/bootstrap.bundle.js" type="text/javascript"></script>
+    
+	<style type="text/css">
         .wrapper{
-            width: 650px;
+            width: 850px;
             margin: 0 auto;
         }
         .page-header h2{
-            margin-top: 0;
+            margin-top: 10;
         }
         table tr td:last-child a{
             margin-right: 15px;
@@ -29,10 +33,19 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="page-header clearfix">
+                    <!--<div class="page-header clearfix">
                         <h2 class="pull-left">Employees Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right">Add New Employee</a>
-                    </div>
+                        <a href="create.php" type="button" class="btn btn-success pull-right">Add New Employee</a>
+                    </div>-->
+					<div>
+    					<h2>Employees Details</h2>      
+   						
+  					</div>
+					<div class="clearfix">
+  						<!--<button type="button" class="btn btn-secondary float-left">Example Button floated left</button>-->
+						<a href="create.php" type="button" class="btn btn-success float-right">Add New Employee</a> <br><br>
+ 						
+					</div>
                     <?php
                     // Include config file
                     require_once "config.php";
@@ -41,7 +54,7 @@
                     $sql = "SELECT * FROM employees";
                     if($result = mysqli_query($link, $sql)){
                         if(mysqli_num_rows($result) > 0){
-                            echo "<table class='table table-bordered table-striped'>";
+                            echo "<table class='table table-bordered table-sm'>";
                                 echo "<thead>";
                                     echo "<tr>";
                                         echo "<th>#</th>";
