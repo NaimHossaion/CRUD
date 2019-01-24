@@ -21,6 +21,9 @@
         table tr td:last-child a{
             margin-right: 15px;
         }
+		tr:nth-child(even) {
+  			background-color: #f2f2f2
+		}
     </style>
     <script type="text/javascript">
         $(document).ready(function(){
