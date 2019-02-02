@@ -7,7 +7,6 @@
 	
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
-	<script src="js/popper.js" type="text/javascript"></script>
     <script src="js/bootstrap.bundle.js" type="text/javascript"></script>
     
 	<style type="text/css">
@@ -46,6 +45,17 @@
   					</div>
 					<div class="clearfix">
   						<!--<button type="button" class="btn btn-secondary float-left">Example Button floated left</button>-->
+						<!--<a href="search.php" type="button" class="btn btn-success float-left">Search</a>-->
+						
+						<!--For Search Box-->
+						<!--<form action="users.php" method="GET">
+						  <input name="username" id="search" type="text" placeholder="Type here">
+						  <input id="submit" type="submit" value="Search">
+						</form>-->
+						<!--<a><input class="form-control" type="text" placeholder="Default input"></a>-->
+						<!--<a href="search.php" type="text" placeholder="Search..." class="form-control float-left">Search</a>
+						<a href="" type="text" placeholder="Search..." class="form-control float-none">none</a>-->
+						<a><input class="form-control" type="text" placeholder="Default input"></a>
 						<a href="create.php" type="button" class="btn btn-success float-right">Add New Employee</a> <br><br>
  						
 					</div>
@@ -60,7 +70,7 @@
                             echo "<table class='table table-bordered table-sm'>";
                                 echo "<thead>";
                                     echo "<tr>";
-                                        echo "<th>#</th>";
+                                        echo "<th>Sl#</th>";
                                         echo "<th>Name</th>";
                                         echo "<th>Address</th>";
                                         echo "<th>Salary</th>";
@@ -75,9 +85,9 @@
                                         echo "<td>" . $row['address'] . "</td>";
                                         echo "<td>" . $row['salary'] . "</td>";
                                         echo "<td>";
-                                            echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                            echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                            echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><img src='images/view.png' width='20' height='20'></a>";
+                                            echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><img src='images/edit.png' width='20' height='20'></a>";
+                                            echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><img src='images/delete.png' width='20' height='20'></a>";
                                         echo "</td>";
                                     echo "</tr>";
                                 }
