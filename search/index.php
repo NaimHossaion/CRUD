@@ -9,12 +9,12 @@
 	<link rel="stylesheet" href="css/1/dataTables.bootstrap.min.css">
 	<script src="js/jquery-3.3.1.js" type="text/javascript"></script>
     <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
-	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/dataTables.bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/script.js" type="text/javascript"></script>
     
 	<style type="text/css">
         .wrapper{
-            width: 850px;
+            width: 1050px;
             margin: 0 auto;
         }
         .page-header h2{
@@ -48,26 +48,30 @@
                     require_once "config.php";
                     
                     // Attempt select query execution
-                    $sql = "SELECT * FROM employees";
+                    $sql = "SELECT * FROM inventory";
                     if($result = mysqli_query($link, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo "<table id='example' class='table table-bordered table-sm'>";
                                 echo "<thead>";
                                     echo "<tr>";
-                                        echo "<th>Sl#</th>";
-                                        echo "<th>Name</th>";
-                                        echo "<th>Address</th>";
-                                        echo "<th>Salary</th>";
+                                        echo "<th>SL</th>";
+                                        echo "<th>Branch</th>";
+                                        echo "<th>Department</th>";
+                                        echo "<th>User_Name</th>";
+							            echo "<th>Emp_ID</th>";
+							            echo "<th>IP_Address</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
                                 while($row = mysqli_fetch_array($result)){
                                     echo "<tr>";
-                                        echo "<td>" . $row['id'] . "</td>";
-                                        echo "<td>" . $row['name'] . "</td>";
-                                        echo "<td>" . $row['address'] . "</td>";
-                                        echo "<td>" . $row['salary'] . "</td>";
-//                                        
+                                        echo "<td>" . $row['SL'] . "</td>";
+                                        echo "<td>" . $row['Branch'] . "</td>";
+                                        echo "<td>" . $row['Department'] . "</td>";
+                                        echo "<td>" . $row['User_Name'] . "</td>";
+                                        echo "<td>" . $row['Emp_ID'] . "</td>";
+                                        echo "<td>" . $row['IP_Address'] . "</td>";
+	            //                                        
                                     echo "</tr>";
                                 }
                                 echo "</tbody>";                            
